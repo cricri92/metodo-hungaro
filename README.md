@@ -18,15 +18,18 @@ tachados y sumar a las intersecciones de las líneas.
   
 ## Instalacion
 
-*Requiere* tener instalado previamente: Node.js (v 4.4.4 o superior)
+*Requiere* tener instalado previamente: Node.js (v 4.4.4 o superior) y un cliente git
 
-1. En el fichero raiz, ejecutar el comando en el terminal para instalar todas las dependencias correspondientes al funcionamiento del servidor: 
+1. Clonar el repositorio
+> ``` $ git clone [url-repo]```
+
+2. En el fichero raiz, ejecutar el comando en el terminal para instalar todas las dependencias correspondientes al funcionamiento del servidor: 
 >```$ npm install```
 
-2. El el fichero *client/*, ejecutar el comando en el terminal para instalar todas las dependencias correspondientes al funcionamiento del cliente:
+3. El el fichero *client/*, ejecutar el comando en el terminal para instalar todas las dependencias correspondientes al funcionamiento del cliente:
 >```$ npm install```
 
-3. Luego, en el fichero principal, ejecutar el comando en el terminal para correr el server:
+4. Luego, en el fichero principal, ejecutar el comando en el terminal para correr el server:
 >```$ npm start```
 
-4. El servidor correra en [http://localhost:3000](http://localhost:3000)
+El servidor correra en [http://localhost:3000](http://localhost:3000)
