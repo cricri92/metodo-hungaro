@@ -1,0 +1,45 @@
+table {      
+      border-collapse:collapse;
+      table-layout:fixed;
+    }
+table * {
+    height:50px;
+    width:50px;
+    min-width:50px;
+    min-height:50px;
+    margin:0px;
+    padding:0px;
+}
+
+.rowtitle {
+    float:left;
+    opacity:1;
+    z-index:3;
+}
+
+    .table th,
+    .table td {
+      text-align: center;
+      border: 1px solid #dddddd;
+    }
+
+    .table th {
+      font-weight: bold;
+    }
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+.columntitle {
+    
+    position:fixed;
+}
+
+.content {
+    left:60px;
+    top:59px;
+    float: right;
+    display: block;
+}

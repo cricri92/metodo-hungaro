@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-4">
+        Cantidad filas/columnas:
+        <input type="number" required (change)="onChangeSize()" [(ngModel)]="size" name="size" class="form-control"> 
+    </div>  
+        
+    <div class="col-md-4">  
+        Letra para las filas: 
+        <input type="text" [(ngModel)]="letra_filas" class="form-control">
+    </div>
+    <div class="col-md-4">
+        Letra para las columnas:
+        <input type="text" [(ngModel)]="letra_columnas" class="form-control">
+    </div>
+</div>
+<br>
+<hr>
+
+<table class="table row col-md-12">
+    <th *ngFor="let key of keys">
+        {{letra_columnas}}{{key}}        
+    </th>  
+    <tr *ngFor="let keyi of keys">
+        {{letra_filas}}{{keyi}}
+        <td *ngFor="let keyj of keys">
+            <input required type="number" (change)="onChangeValues()" class="table-input form-control" [(ngModel)]="matrizOriginal[keyi-1][keyj-1]">
+        </td>        
+    </tr>       
+</table>
+
+<div *ngIf="!clicked" class="row">       
+    <button (click)="onClick()"> Aplicar método </button> 
+</div> 
+
+<div class="row" *ngIf="clicked"> 
+    <hr>
+    <paso-1 [matrizOriginal]="matrizOriginal" 
+            [letra_filas]="letra_filas" 
+            [letra_columnas]="letra_columnas" 
+            [size]="size">
+    </paso-1>
+    
+</div>
