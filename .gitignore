@@ -29,6 +29,7 @@ build/Release
 # Dependency directories
 node_modules
 typings
+
 jspm_packages
 
 # Optional npm cache directory
@@ -36,4 +37,4 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
->>>>>>> 1bf8d27537dbd13cc30c2b185c214da4f87fe067
+
