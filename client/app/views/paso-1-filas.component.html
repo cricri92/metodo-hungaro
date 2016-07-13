@@ -1,0 +1,29 @@
+<h2>Paso 1 - Minimos de las filas/columnas</h2>
+<hr>
+<br>
+<h2><small>Minimo de las filas</small></h2>
+
+<div *ngIf="loaded">
+    <div class="col-md-12">{{u_i}}</div>
+
+    <table class="table row col-md-12">  
+        <th *ngFor="let key of keys">
+            {{letra_columnas}}{{key}}        
+        </th>  
+        <tr *ngFor="let keyi of keys">
+            {{letra_filas}}{{keyi}}
+            <td *ngFor="let keyj of keys">
+                <p>{{ matrizPaso1_f[keyi-1][keyj-1] }}</p>
+            </td>        
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="activate">
+    <paso-1-columnas
+        [matrizFilas]="matrizPaso1_f"
+        [size]="size"
+        [letra_filas]="letra_filas"
+        [letra_columnas]="letra_columnas" >
+    </paso-1-columnas>
+</div>

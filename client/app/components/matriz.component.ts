@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { NgForm }    from '@angular/common'
 
-import { Paso1Component } from './matriz-paso-1.component'
+import { Paso1ComponentFilas } from './matriz-paso-1-filas.component'
+import { Paso1ComponentColumnas } from './matriz-paso-1-columnas.component'
 import { MatrizService } from '../models/matriz.service'
 
 @Component({
@@ -19,7 +20,7 @@ import { MatrizService } from '../models/matriz.service'
             border-left: 5px solid #a94442; /* red */
         }`
     ],
-    directives: [Paso1Component],
+    directives: [Paso1ComponentFilas],
     providers: [MatrizService]
 })
 export class MatrizComponent implements OnInit {
@@ -41,7 +42,7 @@ export class MatrizComponent implements OnInit {
     
     ngOnInit() {
         this.inicializarMatriz()         
-        console.log(this.matrizOriginal)      
+        //console.log(this.matrizOriginal)      
         this.numbers() 
     }
 

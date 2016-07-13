@@ -1,32 +1,5 @@
 'use strict'
 
-/*
-function getMinimosPorFilas(matriz, size) {
-    let i, j
-    let x, minimos_filas = []
-    for(i = 0; i < size; i++) {
-        for(j = 0; j < size; j++) {
-            x.push(matriz[i])
-        }
-        minimo_filas.push(Math.min.apply(Math, x))
-    }
-    return minimos_filas
-}
-*/
-/*
-function getMinimosPorColumnas(matriz, size) {
-    let i,j 
-    let x, minimo_columnas = []
-    for(i = 0; i < size; i++) {
-        for(j = 0; j < size; j++) {
-            x.push(matriz[j][i])
-        }
-        minimo_columnas.push(Math.min.apply(Math, x))
-    }
-    return(minimo_columnas)
-}
-*/
-
 module.exports.getMinimosPorFilas = (matriz, size) => {
     let i, j
     let x = []
@@ -45,10 +18,11 @@ module.exports.getMinimosPorColumnas = (matriz, size) => {
     let i,j 
     let x = []
     let minimo_columnas = []
+    let new_matriz = this.calcularMinimoPorFilas(matriz, size)
     for(i = 0; i < size; i++) {
         x = []
         for(j = 0; j < size; j++) {
-            x.push(matriz[j][i])
+            x.push(new_matriz[j][i])
         }
         minimo_columnas.push(Math.min.apply(Math, x))
     }    

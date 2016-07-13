@@ -1,0 +1,16 @@
+<h2><small>Minimo de las columnas</small></h2>
+<div *ngIf="loaded">
+    <div class="col-md-12">{{v_j}}</div>
+
+    <table class="table row col-md-12">  
+        <th *ngFor="let key of keys">
+            {{letra_columnas}}{{key}}        
+        </th>  
+        <tr *ngFor="let keyi of keys">
+            {{letra_filas}}{{keyi}}
+            <td *ngFor="let keyj of keys">
+                <p>{{ matrizPaso1_c[keyi-1][keyj-1] }}</p>
+            </td>        
+        </tr>
+    </table>
+</div>

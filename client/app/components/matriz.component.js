@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var matriz_paso_1_component_1 = require('./matriz-paso-1.component');
+var matriz_paso_1_filas_component_1 = require('./matriz-paso-1-filas.component');
 var matriz_service_1 = require('../models/matriz.service');
 var MatrizComponent = (function () {
     function MatrizComponent(matrizService) {
@@ -26,7 +26,7 @@ var MatrizComponent = (function () {
     }
     MatrizComponent.prototype.ngOnInit = function () {
         this.inicializarMatriz();
-        console.log(this.matrizOriginal);
+        //console.log(this.matrizOriginal)      
         this.numbers();
     };
     MatrizComponent.prototype.inicializarMatriz = function () {
@@ -77,7 +77,7 @@ var MatrizComponent = (function () {
             styles: [
                 ".table-input {\n            width: 75px;\n        }\n        .ng-valid[required] {\n            border-left: 5px solid #42A948; /* green */\n        }\n\n        .ng-invalid {\n            border-left: 5px solid #a94442; /* red */\n        }"
             ],
-            directives: [matriz_paso_1_component_1.Paso1Component],
+            directives: [matriz_paso_1_filas_component_1.Paso1ComponentFilas],
             providers: [matriz_service_1.MatrizService]
         }), 
         __metadata('design:paramtypes', [matriz_service_1.MatrizService])

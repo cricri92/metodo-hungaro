@@ -1,10 +1,8 @@
 "use strict";
 var MatrizModel = (function () {
-    function MatrizModel(indice_i, indice_j, valor, referencia) {
-        this.indice_i = indice_i;
-        this.indice_j = indice_j;
+    function MatrizModel(valor, marca) {
         this.valor = valor;
-        this.referencia = referencia;
+        this.marca = marca;
     }
     return MatrizModel;
 }());

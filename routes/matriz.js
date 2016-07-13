@@ -19,7 +19,7 @@ router.post('/paso-1/columnas/:size', (req, res, next) => {
     let size = req.params.size
     matriz = middleware.calcularMinimoPorColumnas(matriz, size)
     //console.log(matriz)
-    res.send(matrix)
+    res.send(matriz)
 });
 
 router.get('/master/:size', (req, res, next) => {

@@ -36,10 +36,82 @@ var MatrizService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
+    MatrizService.prototype.getMinimosPorFilas = function (matriz, size) {
+        var body = JSON.stringify(matriz);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.post(this._matrizPaso1 + "/minimos-f/" + size, body, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    MatrizService.prototype.getMinimosPorColumnas = function (matriz, size) {
+        var body = JSON.stringify(matriz);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.post(this._matrizPaso1 + "/minimos-c/" + size, body, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
     MatrizService.prototype.getChangedMatriz = function (size) {
         return this.http.get(this._matrizMaster + "/" + size)
             .map(this.extractData)
             .catch(this.handleError);
+    };
+    MatrizService.prototype.getMinFilas = function (matriz, size) {
+        var i, j, k;
+        var x = [];
+        for (i = 0; i < size; i++) {
+            var menor = matriz[i][0];
+            for (j = 0; j < size; j++) {
+                if (matriz[i][j] < menor) {
+                    menor = matriz[i][j];
+                }
+            }
+            x.push(menor);
+        }
+        return x;
+    };
+    MatrizService.prototype.minimizarFilas = function (matriz, size) {
+        var new_matriz = [];
+        var min = this.getMinFilas(matriz, size);
+        var i, j;
+        for (i = 0; i < size; i++) {
+            var menor = min[i];
+            var x = [];
+            for (j = 0; j < size; j++) {
+                x.push(matriz[i][j] - menor);
+            }
+            new_matriz.push(x);
+        }
+        return new_matriz;
+    };
+    MatrizService.prototype.minimizarColumnas = function (matriz, size) {
+        var new_matriz = [];
+        var min = this.getMinColumnas(matriz, size);
+        var i, j;
+        for (i = 0; i < size; i++) {
+            var menor = min[i];
+            var x = [];
+            for (j = 0; j < size; j++) {
+                x.push(matriz[j][i] - menor);
+            }
+            new_matriz.push(x);
+        }
+        return new_matriz;
+    };
+    MatrizService.prototype.getMinColumnas = function (matriz, size) {
+        var i, j, k;
+        var x = [];
+        for (i = 0; i < size; i++) {
+            var menor = matriz[0][i];
+            for (j = 0; j < size; j++) {
+                if (matriz[j][i] < menor) {
+                    menor = matriz[j][i];
+                }
+            }
+            x.push(menor);
+        }
+        return x;
     };
     /** Helper for data extraction from response */
     MatrizService.prototype.extractData = function (res) {
