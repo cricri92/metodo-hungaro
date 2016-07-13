@@ -104,11 +104,10 @@ export class MatrizService {
 
         for(i = 0; i < size; i++) 
         {
-            let menor = min[i]
             let x = []
             for(j = 0; j < size; j++) 
             {
-                x.push(matriz[j][i] - menor)
+                x.push(matriz[i][j] - min[j])
             }  
             new_matriz.push(x)
         }

@@ -21,6 +21,7 @@ var Paso1ComponentColumnas = (function () {
     Paso1ComponentColumnas.prototype.ngOnInit = function () {
         this.numbers();
         this.matrizPaso1_c = this.matrizService.minimizarColumnas(this.matrizFilas, this.size);
+        console.log(this.matrizPaso1_c);
         this.v_j = this.matrizService.getMinColumnas(this.matrizFilas, this.size);
     };
     Paso1ComponentColumnas.prototype.ngAfterContentInit = function () {

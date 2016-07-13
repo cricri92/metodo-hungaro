@@ -1,10 +1,24 @@
+<h2>Matriz original</h2>
+<br>
+<table class="table row col-md-12">  
+    <th *ngFor="let key of keys">
+        {{letra_columnas}}{{key}}        
+    </th>  
+    <tr *ngFor="let keyi of keys">
+        {{letra_filas}}{{keyi}}
+        <td *ngFor="let keyj of keys">
+            <p>{{ matrizOriginal[keyi-1][keyj-1] }}</p>
+        </td>        
+    </tr>
+</table>
+
 <h2>Paso 1 - Minimos de las filas/columnas</h2>
 <hr>
 <br>
 <h2><small>Minimo de las filas</small></h2>
 
 <div *ngIf="loaded">
-    <div class="col-md-12">{{u_i}}</div>
+    <div class="col-md-12"><h3><small>u_i: </small>{{u_i}</h3>}</div>
 
     <table class="table row col-md-12">  
         <th *ngFor="let key of keys">

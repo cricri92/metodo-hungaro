@@ -29,6 +29,7 @@ export class Paso1ComponentColumnas implements OnInit, AfterContentInit{
     ngOnInit() {              
         this.numbers()         
         this.matrizPaso1_c = this.matrizService.minimizarColumnas(this.matrizFilas, this.size)
+        console.log(this.matrizPaso1_c)
         this.v_j = this.matrizService.getMinColumnas(this.matrizFilas, this.size) 
    }
 
